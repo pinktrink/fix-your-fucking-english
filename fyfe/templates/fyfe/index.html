@@ -1,0 +1,14 @@
+{% include 'fyfe/header.html' %}
+<div id="main">
+	<h2>{{ werd.title|safe }}</h2>
+</div>
+<div id="description">
+	<div id="wtf">
+		<div id="arrow1" class="spun">&#9660;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explain that shit.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="arrow2" class="spun">&#9660;</div>
+	</div>
+	<div id="dropdown">{{ werd.description|safe }}</div>
+</div>
+<div id="more">
+	<a href="/">I'm still a dumbfuck and need to learn more shit.</a>
+</div>
+{% include 'fyfe/footer.html' %}

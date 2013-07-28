@@ -1,0 +1,21 @@
+{% include 'fyfe/header.html' %}
+<div id="main">
+	<h3>The proper way of fucking saying that shit is</h3>
+	<h2 class="top">"{{ correct|safe }}"</h2>
+	<h3 class="sep">not</h3>
+	<h2>"{{ incorrect|safe }}"</h2>
+</div>
+<div id="description">
+	{% if description %}
+		<div id="wtf">
+			<div id="arrow1">&#9660;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Why the fuck is that?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="arrow2">&#9660;</div>
+		</div>
+		<div id="dropdown" class="collapsed">
+			{{ description|safe }}
+		</div>
+	{% endif %}
+	<div id="more">
+		<a href="/">I'm still a dumbfuck and need to learn more shit.</a>
+	</div>
+</div>
+{% include 'fyfe/footer.html' %}
