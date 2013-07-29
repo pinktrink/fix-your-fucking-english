@@ -4,7 +4,11 @@ from fyfe.local import LOCALENV
 
 ENV = 'local'
 
-DEBUG = True
+ENVS = {
+    'local': LOCALENV
+}
+
+DEBUG = ENVS[ENV]['DEBUG']
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -13,15 +17,11 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-ENVS = {
-    'local': LOCALENV
-}
-
 DATABASES = ENVS[ENV]['DATABASES']
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = (DEBUG and 'ALLOWED_HOSTS' not in LOCALENV and []) or LOCALENV['ALLOWED_HOSTS']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
