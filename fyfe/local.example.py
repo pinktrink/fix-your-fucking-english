@@ -1,4 +1,5 @@
 LOCALENV = {
+    'DEBUG': True
     'DATABASES': {
         'default': {
             'ENGINE': 'django.db.backends.mysql', #Using MySQL for the live instance, though anything will work
@@ -15,4 +16,5 @@ LOCALENV = {
     'STATIC_URL': '/static/', #URL from which static files should be served from
     'MEDIA_ROOT': '', #If using a WSGI instance, where Apache should serve media files from
     'MEDIA_URL': '', #URL from which media files should be served from
+    'ALLOWED_HOSTS': ['127.0.0.1', 'localhost']
 }
