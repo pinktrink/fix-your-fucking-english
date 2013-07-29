@@ -16,5 +16,7 @@ LOCALENV = {
     'STATIC_URL': '/static/', #URL from which static files should be served from
     'MEDIA_ROOT': '', #If using a WSGI instance, where Apache should serve media files from
     'MEDIA_URL': '', #URL from which media files should be served from
+    
+    #The following can be omitted ONLY if DEBUG is True
     'ALLOWED_HOSTS': ['127.0.0.1', 'localhost']
 }
