@@ -14,31 +14,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 ENVS = {
-    'local': LOCALENV,
-    'staging': {
-        'DATABASES': {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': '',
-                'USER': '',
-                'PASSWORD': '',
-                'HOST': '',
-                'PORT': '',
-            }
-        }
-    },
-    'production': {
-        'DATABASES': {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': '',
-                'USER': '',
-                'PASSWORD': '',
-                'HOST': '',
-                'PORT': '',
-            }
-        }
-    },
+    'local': LOCALENV
 }
 
 DATABASES = ENVS[ENV]['DATABASES']
@@ -72,22 +48,22 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = ('MEDIA_ROOT' in LOCALENV and LOCALENV['MEDIA_ROOT']) or ''
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = ('MEDIA_URL' in LOCALENV and LOCALENV['MEDIA_ROOT']) or ''
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = ('STATIC_ROOT' in LOCALENV and LOCALENV['STATIC_ROOT']) or ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = ('STATIC_URL' in LOCALENV and LOCALENV['STATIC_ROOT']) or '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
