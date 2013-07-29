@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'pfyfe.views.home', name='home'),
     # url(r'^pfyfe/', include('pfyfe.foo.urls')),
     url(r'^$', 'fyfe.views.index'),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^fixit/(?P<werd>[\w:]+)/(?P<sentance>.*?)/$', 'fyfe.views.fixit'),
     url(r'^(?P<werd>\w+)/$', 'fyfe.views.word'),
 
@@ -16,5 +17,4 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
 )
