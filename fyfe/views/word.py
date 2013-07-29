@@ -5,9 +5,9 @@ from fyfe.views.utils import renderWordPage
 
 def word(request, werd):
     try:
-    	search = Search.objects.get(word=werd)
-    	fix = search.fix
+        search = Search.objects.get(word=werd)
+        fix = search.fix
     except Search.DoesNotExist:
         raise Http404
-	
-	return renderWordPage(request, fix)
+    
+    return renderWordPage(request, fix)
