@@ -1,5 +1,5 @@
 LOCALENV = {
-    'DEBUG': True
+    'DEBUG': True,
     'DATABASES': {
         'default': {
             'ENGINE': 'django.db.backends.mysql', #Using MySQL for the live instance, though anything will work
@@ -10,6 +10,9 @@ LOCALENV = {
             'PORT': '',
         }
     },
+    
+    #SECRET_KEY is REQUIRED and MUST be changed to something random and secure and not shared, otherwise the app won't start
+    'SECRET_KEY': '',
     
     #The following can be omitted
     'STATIC_ROOT': '', #If using a WSGI instance, where Apache should serve static files from
