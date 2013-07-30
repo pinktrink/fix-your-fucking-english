@@ -53,7 +53,7 @@ MEDIA_ROOT = ('MEDIA_ROOT' in LOCALENV and LOCALENV['MEDIA_ROOT']) or ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ('MEDIA_URL' in LOCALENV and LOCALENV['MEDIA_ROOT']) or ''
+MEDIA_URL = ('MEDIA_URL' in LOCALENV and LOCALENV['MEDIA_URL']) or ''
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -63,7 +63,7 @@ STATIC_ROOT = ('STATIC_ROOT' in LOCALENV and LOCALENV['STATIC_ROOT']) or ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = ('STATIC_URL' in LOCALENV and LOCALENV['STATIC_ROOT']) or '/static/'
+STATIC_URL = ('STATIC_URL' in LOCALENV and LOCALENV['STATIC_URL']) or '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
