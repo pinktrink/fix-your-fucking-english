@@ -8,7 +8,7 @@ def renderDescription(desc, words):
     desc = desc.replace('\n', '<br />')
     
     for word in words:
-        r = re.compile(r'(\b' + word + r')\b', re.IGNORECASE)
+        r = re.compile(r':(' + word + r')\b', re.IGNORECASE)
         
         desc = re.sub(r, r'<em>\1</em>', desc)
     
@@ -20,7 +20,7 @@ def renderWordPage(request, fix):
     fix.description = renderDescription(fix.description, words)
     
     for word in words:
-        r = re.compile(r'(\b' + word + r')\b', re.IGNORECASE)
+        r = re.compile(r':(' + word + r')\b', re.IGNORECASE)
         
         fix.title = re.sub(r, r'<em>\1</em>', fix.title)
     
