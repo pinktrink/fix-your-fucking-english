@@ -9,5 +9,5 @@ def word(request, werd):
         fix = search.fix
     except Search.DoesNotExist:
         raise Http404
-    
+
     return renderWordPage(request, fix)
